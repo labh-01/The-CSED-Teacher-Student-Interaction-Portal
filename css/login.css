@@ -1,0 +1,44 @@
+		  	.clearfix{
+		  		overflow: auto
+		  	}
+		  	img{
+		  		float:left
+		  	}
+		  	#frm {
+			  border-radius: 20px;
+			  border: 3px solid #004080;
+			  padding: 50px; 
+			  width: 600px;
+			  height: 400px; 
+			  box-sizing: border-box;
+			  background-color: #99ccff;
+			}
+			body{
+				 background-color: #f0f8ff;
+			}
+
+			#box {
+			  border-radius: 20px;
+			  border: 3px solid #004080;
+			  padding: 50px;
+			  width:600px;
+			  height: 350px;
+			  margin-left: auto;
+			  margin-right: auto;
+			  background-color: #99ccff;
+			}
+
+			#frm2{
+				width:400px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+
+			#modalB{
+				background-color: #f0f8ff;
+			}
+
+			#modalH{
+				font-size: 20px;
+				background-color:#f0f8ff; 
+			}

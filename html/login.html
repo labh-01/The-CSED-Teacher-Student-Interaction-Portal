@@ -1,0 +1,138 @@
+<html>
+	<head>
+		<title>CSED</title>
+
+		<meta charset="utf-8">
+
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	  
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+	    <link rel="stylesheet" href="../css/login.css">
+
+
+
+
+	</head>
+	<body>
+		<? php session_start();
+		?>
+		
+	<div>
+		<nav class="navbar navbar-light bg-info">
+			<div class="container">
+				<div class="col-md-1"></div>
+	  
+			  <div class='clearfix'>
+			  	<img src="..\images\logo.png" alt="MNNIT" />
+			  </div>
+			  <p class="navbr-text col-lg-auto h4" style='text-align: center'>
+			  	Computer Science & Engineering Department <br />
+			  	Motilal Nehru National Institute of Technology Allahabad <br />
+			  	Prayagraj-211004
+			  </p>
+			  <div class="col-md-1"></div>
+			  </div>
+		</nav>
+	</div>
+
+
+	<div>
+		<div class="col-sm-3"></div>
+		<div class ="flex container mt-4" id='frm'>
+		
+			<form class="form-horizontal" action="http://localhost/csed/server_side/login.php" method="post">
+			  <div class="form-group">
+			    <label class="control-label col-sm-2" name="user">Username:</label>
+			    <div >
+			      <input type="text" class="form-control" id="user" name="user" placeholder="Enter username" />
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="control-label col-sm-2" name="pswd">Password:</label>
+			    <div> 
+			      <input type="password" class="form-control" id="pswd" name="pswd" placeholder="Enter password" />
+			    </div>
+			  </div>
+
+			  <div class="form-group" style="margin-top: 20px">
+			  	<label class="radio-inline"><input type="radio" name="optrole"  value="Teacher">Teacher</label>
+				<label class="radio-inline"><input type="radio" name="optrole" value="Student" style="margin-left:  20px">Student</label>
+			  </div>
+		
+			  <div class="form-group" style="margin-top: 15px"> 
+			    <div >
+			      <button type="submit" class="btn btn-success col-sm-3">LogIn</button>
+			    
+			     <!-- Trigger the modal with a button -->
+  				<button type="button" class="btn btn-info btn-md col-sm-5" data-toggle="modal" data-target="#myModal" style="float:right">Forget Password ?</button>
+			    
+			    </div>
+			  </div>
+
+			</form>
+			<div class="error">
+				<?php echo $_SESSION["error"] ?>
+			</div>
+		</div>
+
+		<div class="col-sm-3"></div>
+
+	</div>
+
+
+<div class="container">
+
+ <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" id="modalH">
+          <span style="text-align: left">Forget Password</span>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body" id="modalB">
+          
+          <div id = "box">
+      <form class="form-horizontal" id="frm2" action="http://localhost/csed/server_side/forget_password.php" method="post">
+        <div class="form-group">
+			    <label class="control-label " name="user">Registration No:</label>
+			    <div >
+			      <input type="text" class="form-control" id="user" name="user" placeholder="Registraion No." />
+		    </div>
+	  </div>
+        <div class="form-group">
+          <label class="control-label " name="email">Email:</label>
+          <div>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Your registered Email" />
+          </div>
+          <div class="form-group" style="margin-top: 5px">
+			  	<label class="radio-inline"><input type="radio" name="optrole"  value="Teacher">Teacher</label>
+				<label class="radio-inline"><input type="radio" name="optrole" value="Student" style="margin-left:  20px">Student</label>
+			  </div>
+          <div class="form-group" style="margin-top: 5px ; margin-left:auto">
+            <button type="submit" class="btn btn-info btn-md">Submit</button>
+        </div>
+        </div>
+      </form>
+      <span>
+      	<?php echo $msg ?>
+      </span>
+ 
+
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+	</body>
+
+</html>
